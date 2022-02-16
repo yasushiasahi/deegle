@@ -23,8 +23,7 @@ pub struct Translation {
 
 impl Display for Translation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let service = format!("{}:", self.service_name.green()).green();
-
+        let service = format!("{}:", self.service_name).bright_purple();
         let result = match &self.result {
             Ok(r) => r.join("\n").cyan(),
             Err(e) => e.join("\n").red(),
